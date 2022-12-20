@@ -355,7 +355,7 @@ GitHub: https://github.com/mr-r0ot
                 else:
                     console.print(" [-] NotFind New Folder!", style="bold red")
             except:
-                console.print(" [-] ErrorFind New Folder!", style="bold red")
+                console.print(" [!] ErrorFind New Folder!", style="bold red")
 
         
 
