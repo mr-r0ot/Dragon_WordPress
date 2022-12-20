@@ -1,13 +1,5 @@
 # Dragon_WordPress
-
-
-
-@ ss
-$ ss
-% ss
-& ss
-= ss
-< ss
+A powerful and real script to attack websites built with WordPress
 
 # Project facilities
 *
