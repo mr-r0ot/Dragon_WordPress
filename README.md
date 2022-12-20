@@ -29,14 +29,10 @@ Steps to use
 
 
 * Enter the target WordPress site address (without http or https)
+
+
 ```
-$ ./windows-exploit-suggester.py --update
-[*] initiating...
-[*] successfully requested base url
-[*] scraped ms download url
-[+] writing to file 2014-06-06-mssb.xlsx
-[*] done
-```
+
  ____
 |  _ \ _ __ __ _  __ _  ___  _ __
 | | | | '__/ _` |/ _` |/ _ \| '_ \
@@ -56,8 +52,9 @@ GitHub: https://github.com/mr-r0ot
 
 
  Enter Target(googl.com or googl.com/wp-includes/...): target.com
-* 
-* 
+
+
+```
 # 
 
 * Wait for the script to establish your connection to the target host (it may take a while!)
