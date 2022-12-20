@@ -13,6 +13,7 @@ Project facilities
 * Access to host server
 * Access to the site's login page
 * Access to site information
+* Upload Your Filen On Host Target
 * Destroying the site and...
 
 
@@ -29,7 +30,7 @@ Steps to use
 * Enter the target WordPress site address (without http or https)
 * Wait for the script to establish your connection to the target host (it may take a while!  Approximately 30-40 minutes.)
 * Now the list of Bakhsama script features is displayed
-* Enter one
+* Enter one Of All
 * Depending on the option you entered, the option will be executed!
 
 
@@ -101,7 +102,7 @@ http://target.com
  [+] The goal is WordPress type!
 
  [+] Finded /license.txt File!
- [!] ErrorFind New File!
+ [-] NotFind New File!
  [+] Find index.php File!
  [+] Find info.php File!
  [+] Find xmlrpc.php File!
@@ -113,10 +114,6 @@ http://target.com
 
 
 ```
- 
- 
- 
- 
 * Now the list of Bakhsama script features is displayed
 * Enter one
 * Depending on the option you entered, the option will be executed!
