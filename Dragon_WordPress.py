@@ -508,7 +508,7 @@ GitHub: https://github.com/mr-r0ot
             elif sssss == "5":
                 clear_screen()
                 path = os.getcwd()
-                os.chdir(path+slash_system()+"DarkUp Tools"+slash_system()+"CVE-2018-6389")
+                os.chdir(path+slash_system()+"Dragon_WordPress_Tools"+slash_system()+"CVE-2018-6389")
                 try:
                     os.system("python CVE-2018-6389.py")
                 except:
@@ -537,25 +537,6 @@ enctype="multipart/form-data">
                 except:
                     pass
                 clear_screen()
-
-
-
-
-
-            elif sssss == "7":
-                clear_screen()
-
-                path = os.getcwd()
-                os.chdir(path+slash_system()+"DarkUp Tools"+slash_system()+"CVE-2018-6389")
-                try:
-                    os.system("python CVE-2018-6389.py")
-                except:
-                    pass
-                os.chdir(path)
-
-                input("\n\n\n\n\t  Enter for close ")
-                clear_screen()
-            # =============================
 
 
 
