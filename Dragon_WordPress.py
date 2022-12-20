@@ -1,5 +1,15 @@
-import os, time, socket, datetime, sys, random, shutil, requests
-from rich.console import Console
+import os
+try:
+    import time, socket, datetime, sys, random, shutil, requests
+    from rich.console import Console
+except:
+    os.system("pip install datetime")
+    os.system("pip install random")
+    os.system("pip install requests")
+    os.system("pip install rich")
+    import time, socket, datetime, sys, random, shutil, requests
+    from rich.console import Console
+
 console = Console()
 
 
