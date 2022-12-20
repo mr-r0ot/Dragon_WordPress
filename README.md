@@ -1,10 +1,7 @@
 # Dragon_WordPress
 
-? ss
-/ SS
-\ SS
-| ss
-+ SS
+
++ ss
 - ss
 @ ss
 $ ss
