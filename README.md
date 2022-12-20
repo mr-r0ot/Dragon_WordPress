@@ -1,8 +1,7 @@
 # Dragon_WordPress
 
 
-+ ss
-- ss
+
 @ ss
 $ ss
 % ss
