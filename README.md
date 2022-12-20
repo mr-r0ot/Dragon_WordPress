@@ -222,7 +222,10 @@ GitHub: https://github.com/mr-r0ot
 
 
 
-
+   wp-admin
+   wp-content
+   wp-includes
+   
    /license.txt
    index.php
    info.php
