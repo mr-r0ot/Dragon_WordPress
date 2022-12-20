@@ -370,7 +370,7 @@ GitHub: https://github.com/mr-r0ot
 
 
 
-   1 --->  **Simulation of the target website server host!&&
+   1 --->  **Simulation of the target website server host!**
    2 ---> Get Login Page WebSite
    3 ---> Get Info Target
    4 ---> Get index file Of Target
@@ -555,7 +555,6 @@ enctype="multipart/form-data">
 
                 input("\n\n\n\n\t  Enter for close ")
                 clear_screen()
-                baner()
             # =============================
 
 
