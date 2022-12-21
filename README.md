@@ -142,10 +142,8 @@ GitHub: https://github.com/mr-r0ot
    2 ---> Get Login Page WebSite
    3 ---> Get Info Target
    4 ---> Get index file Of Target
-   5 ---> DOne WordPress WebSite
+   5 ---> DOne WordPress WebSite under 4.9.3
    6 ---> Upload File On Server Target
-   7 ---> Down Any Wordpress site under 4.9.3
-
 
 
   0 --> Exit
@@ -182,7 +180,7 @@ GitHub: https://github.com/mr-r0ot
    2 ---> Get Login Page WebSite
    3 ---> Get Info Target
    4 ---> Get index file Of Target
-   5 ---> DOne WordPress WebSite
+   5 ---> DOne WordPress WebSite under 4.9.3
    6 ---> Upload File On Server Target
 
 
