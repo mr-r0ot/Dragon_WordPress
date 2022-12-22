@@ -31,23 +31,8 @@ def slash_system():
         return "/"
 
 
-if os.name == 'nt':
-    os.system('color F')
-    os.system("title DarkUp") 
 headers = {"User-Agent": "Mozilla/5.0 (X11; Linux i686; rv:68.0) Gecko/20100101 Firefox/68.0"}
 
-def clear_screen():
-    if os.name == 'nt':
-        os.system('cls')
-    else:
-        os.system('clear')
-
-def slash_system():
-    if os.name == 'nt':
-        ccvf = "\ "
-        return ccvf[:-1]
-    else:
-        return "/"
       
 path = os.getcwd()
 clear_screen()
@@ -62,14 +47,7 @@ class color:
     abi_kamrang = '\033[94m'
 
     
-    
-    
-class color:
-    red = '\033[91m'
-    sabz = '\033[92m'
-    sefid = '\033[0m'
-    narenji = '\033[93m'
-    abi_kamrang = '\033[94m'
+
 
 class requests_anonymous:
     def fast_get(url):
@@ -384,9 +362,8 @@ GitHub: https://github.com/mr-r0ot
    2 ---> Get Login Page WebSite
    3 ---> Get Info Target
    4 ---> Get index file Of Target
-   5 ---> DOne WordPress WebSite
+   5 ---> DOne WordPress WebSite under 4.9.3 
    6 ---> Upload File On Server Target
-   7 ---> Down Any Wordpress site under 4.9.3 
   
 
 
@@ -451,7 +428,7 @@ GitHub: https://github.com/mr-r0ot
     #                                      #
     #  WebSiteLogin:  {}/wp-admin
     #                                      #
-    #                         Buy DarkUp   #
+    #                                      #
     ########################################
 
 """.format(Target), style="bold green")
