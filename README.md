@@ -18,7 +18,15 @@ Project facilities
 
 
 
-
+# Install and run the tool
+* Installation and execution commands in Shell
+```
+git clone https://github.com/mr-r0ot/Dragon_WordPress.git
+python -m pip install rich
+python -m pip install requests
+python -m pip install datetime
+clear || cls && cd Dragon_WordPress && python main.py || python3 main.py
+```
 
 
 
