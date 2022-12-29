@@ -329,7 +329,6 @@ GitHub: https://github.com/mr-r0ot
             console.print("\n\n\n\n [-] The goal is not WordPress type!", style="bold red")
             input("\n\n\n\n\t  Enter for close ")
             clear_screen()
-            baner()    
             break
 
 
@@ -665,7 +664,6 @@ enctype="multipart/form-data">
 
         input("\n\n\n\n\t  Enter for close ")
         clear_screen()
-        baner()  
         break
 # =================================================================================================================
 
