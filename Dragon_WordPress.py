@@ -182,6 +182,109 @@ class requests_anonymous:
 
 
 
+
+class webinfo():
+    def get_promming(Target):
+        if not "https://" in Target.lower() and not "http://" in Target.lower():
+            Target = ("http://"+Target)
+        # =========================Get PL=========================
+        php_test = requests.get(Target+"/index.php")
+        html_test = requests.get(Target+"/index.html")
+        dart_test = requests.get(Target+"/index.dart")
+        java_test = requests.get(Target+"/index.java")
+        js_test = requests.get(Target+"/index.js")
+        if php_test.status_code == 200:
+            pl = ("php")
+        elif html_test.status_code == 200:
+            pl = ("html")
+        elif dart_test.status_code == 200:
+            pl = ("dart")
+        elif java_test.status_code == 200:
+            pl = ("java")
+        elif js_test.status_code == 200:
+            pl = ("js")
+        else:
+            pl = ("Access is prohibited!")
+        return pl
+        
+# / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+
+    def get_cms(Target):
+        if not "https://" in Target.lower() and not "http://" in Target.lower():
+            Target = ("http://"+Target)
+        # =========================Get Cms=========================
+        try:
+            wp_test1 = requests.get(Target+"/wp-includes/ID3/license.commercial.txt")
+            wp_test2 = requests.get(Target+"/wp-includes/sodium_compat/composer.json")
+            wp_test3 = requests.get(Target+"/license.txt")
+            wp_test4 = requests.get(Target+"/wp-includes/wlwmanifest.xml")
+            if wp_test1.status_code != 404 or wp_test2.status_code != 404 or wp_test3.status_code != 404 or wp_test4.status_code != 404:
+                cms = ("WordPress")
+            else:
+                cms = ("Access is prohibited!")
+        except:
+            cms = ("Error")
+        return cms
+        
+# / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+
+    def chek_install_plugin(Target, plugin_name):
+        if not "https://" in Target.lower() and not "http://" in Target.lower():
+            Target = ("http://"+Target)
+        try:
+            ceck = requests.get(Target+"/wp-content/plugins/{}/readme.txt".format(plugin_name))
+            if ceck.status_code != 404:
+                return "True"
+            else:
+                return "False"
+        except:
+            return "Error"
+        
+# / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+
+    def get_blogs(Target):
+        if not "https://" in Target.lower() and not "http://" in Target.lower():
+            Target = ("http://"+Target)
+        # =========================Get PL=========================
+        try:
+            php_test = requests.get(Target+"/index.php")
+            html_test = requests.get(Target+"/index.html")
+            dart_test = requests.get(Target+"/index.dart")
+            java_test = requests.get(Target+"/index.java")
+            js_test = requests.get(Target+"/index.js")
+            if php_test.status_code == 200:
+                pl = ("php")
+            elif html_test.status_code == 200:
+                pl = ("html")
+            elif dart_test.status_code == 200:
+                pl = ("dart")
+            elif java_test.status_code == 200:
+                pl = ("java")
+            elif js_test.status_code == 200:
+                pl = ("js")
+            else:
+                pl = ("Access is prohibited!")
+        except:
+            pl = ("Error")
+        # =========================Get Cms=========================
+        try:
+            wp_test = requests.get(Target+"/wp-includes/ID3/license.commercial.txt")
+            wp_test2 = requests.get(Target+"/wp-includes/sodium_compat/composer.json")
+            if wp_test.status_code != 404 or wp_test2.status_code != 404:
+                cms = ("WordPress")
+            else:
+                cms = ("Access is prohibited!")
+        except:
+            cms = ("Error")
+        
+        return [pl, cms]
+# ==============================================================
+
+
+
+
+
+
 def Dragon_WordPress():
     path = os.getcwd()
     clear_screen()
@@ -219,36 +322,62 @@ GitHub: https://github.com/mr-r0ot
         Target_test = Target.split("/")[0]
         Target_test_w = ("http://"+Target_test)
         print(Target_test_w)
-        try:
-            res = requests_anonymous.fast_get(Target_test_w+"/license.txt")
-            if res.status_code != 404:
-                console.print(" [+] The goal is WordPress type!\n", style="bold green")
-                console.print(" [+] Finded /license.txt File!", style="bold green")
-                file_finded.append("/license.txt")
-            else:
-                try:
-                    res = requests_anonymous.fast_get(Target_test_w+"/index.php")
-                    if res.status_code != 404:
-                        console.print(" [+] The goal is WordPress type!\n", style="bold green")
-                        console.print(" [-] NotFind /license.txt File!", style="bold red")
-                        console.print(" [+] Finded /index.php File!", style="bold green")
-                        file_finded.append("/index.php")
-                    else:
-                        console.print("\n\n\n\n [-] The goal is not WordPress type!", style="bold red")
-                        input("\n\n\n\n\t  Enter for close ")
-                        clear_screen()
-                        baner()    
-                        break
-                except:
-                    pass
-        except:
-            pass
+
+        if webinfo.get_cms(Target_test_w) == "WordPress":
+            console.print(" [+] The goal is WordPress type!\n", style="bold green")
+        else:
+            console.print("\n\n\n\n [-] The goal is not WordPress type!", style="bold red")
+            input("\n\n\n\n\t  Enter for close ")
+            clear_screen()
+            baner()    
+            break
 
 
         if not "https://" in Target.lower() and not "http://" in Target.lower():
             Target = ("http://"+Target)
 
-        Defalt_file_host = [
+
+
+        
+
+
+
+        while True:
+            clear_screen()
+            def bbbnnnrrr():
+                clear_screen()
+                bbbbbbbbnnr()
+                Selct = str(input("""
+
+
+
+   1 --->  **Simulation of the target website server host!**
+   2 ---> Get Login Page WebSite
+   3 ---> Get Info Target
+   4 ---> Get index file Of Target
+   5 ---> DOne WordPress WebSite under 4.9.3 
+   6 ---> Upload File On Server Target
+   7 --->  **Check Installing Plugin From WordPress**
+   8 ---> Get Cms Target
+   9 ---> Get Programming language Target
+
+  
+
+
+  0 --> Exit
+
+
+ ===> """))
+                return Selct
+    
+        
+            sssss = bbbnnnrrr()
+            if sssss == "0":
+                break
+            elif sssss == "1":
+                clear_screen()
+                bbbbbbbbnnr()
+                Defalt_file_host = [
         "g",
         "index.php", "info.php", "xmlrpc.php", "wp-trackback.php", "wp-signup.php", "wp-settings.php", ".htaccess",
         "wp-mail.php", "wp-login.php", "wp-load.php", "wp-links-opml.php", "wp-cron.php", "license.commercial.txt",
@@ -304,7 +433,7 @@ GitHub: https://github.com/mr-r0ot
         "IPv6.php", "SSL.php", "freedoms.php", "profile.php", "autoload-php7.php", "options-general.php"
         ""]
         
-        Defalt_folder_host = [
+                Defalt_folder_host = [
 "wp-admin", "wp-content", "wp-includes", "wp", "plugins", "security",
 "sql", "mysql", "mail", "webmail", "info", "host", "server1", "themes", "fonts",
 "webdisk", "server", "css", "images", "includes", "js", "widgets", "ID3",
@@ -323,61 +452,29 @@ GitHub: https://github.com/mr-r0ot
 "lib", "namespaced", "src", "audio"
 ""]
 
-        for file_name in Defalt_file_host:
-            try:
-                res = requests_anonymous.fast_get(Target+"/"+file_name)
-                if res.status_code != 404:
-                    console.print(" [+] Find {} File!".format(file_name), style="bold green")
-                    file_finded.append(file_name)
-                else:
-                    console.print(" [-] NotFind New File!", style="bold red")
-            except:
-                console.print(" [!] ErrorFind New File!", style="bold red")
+                for file_name in Defalt_file_host:
+                    try:
+                        res = requests_anonymous.fast_get(Target+"/"+file_name)
+                        if res.status_code != 404:
+                            console.print(" [+] Find {} File!".format(file_name), style="bold green")
+                            file_finded.append(file_name)
+                        else:
+                            console.print(" [-] NotFind New File!", style="bold red")
+                    except:
+                        console.print(" [!] ErrorFind New File!", style="bold red")
             
-        for file_name in Defalt_folder_host:
-            try:
-                res = requests_anonymous.fast_get(Target+"/"+file_name)
-                if res.status_code != 404:
-                    console.print(" [+] Finded New Folder!", style="bold green")
-                    folder_finded.append(file_name)
-                else:
-                    console.print(" [-] NotFind New Folder!", style="bold red")
-            except:
-                console.print(" [!] ErrorFind New Folder!", style="bold red")
-
-        
+                for file_name in Defalt_folder_host:
+                    try:
+                        res = requests_anonymous.fast_get(Target+"/"+file_name)
+                        if res.status_code != 404:
+                            console.print(" [+] Finded New Folder!", style="bold green")
+                            folder_finded.append(file_name)
+                        else:
+                            console.print(" [-] NotFind New Folder!", style="bold red")
+                    except:
+                        console.print(" [!] ErrorFind New Folder!", style="bold red")
 
 
-
-        while True:
-            clear_screen()
-            def bbbnnnrrr():
-                clear_screen()
-                bbbbbbbbnnr()
-                Selct = str(input("""
-
-
-
-   1 --->  **Simulation of the target website server host!**
-   2 ---> Get Login Page WebSite
-   3 ---> Get Info Target
-   4 ---> Get index file Of Target
-   5 ---> DOne WordPress WebSite under 4.9.3 
-   6 ---> Upload File On Server Target
-  
-
-
-  0 --> Exit
-
-
- ===> """))
-                return Selct
-    
-        
-            sssss = bbbnnnrrr()
-            if sssss == "0":
-                break
-            elif sssss == "1":
                 clear_screen()
                 bbbbbbbbnnr()
                 print("""
@@ -428,7 +525,7 @@ GitHub: https://github.com/mr-r0ot
     #                                      #
     #  WebSiteLogin:  {}/wp-admin
     #                                      #
-    #                                      #
+    #                         Buy DarkUp   #
     ########################################
 
 """.format(Target), style="bold green")
@@ -495,7 +592,7 @@ GitHub: https://github.com/mr-r0ot
             elif sssss == "5":
                 clear_screen()
                 path = os.getcwd()
-                os.chdir(path+slash_system()+"Dragon_WordPress_Tools"+slash_system()+"CVE-2018-6389")
+                os.chdir(path+slash_system()+"DarkUp Tools"+slash_system()+"CVE-2018-6389")
                 try:
                     os.system("python CVE-2018-6389.py")
                 except:
@@ -524,6 +621,44 @@ enctype="multipart/form-data">
                 except:
                     pass
                 clear_screen()
+
+
+
+
+            elif sssss == "7":
+                clear_screen()
+                bbbbbbbbnnr()
+                pluginname = str(input(" Enter Name Plugin: "))
+                retinst =  webinfo.check_install_plugin(Target=Target, plugin_name=pluginname)
+                if retinst == "True":
+                    console.print(" Plugin Installed!", style="bold green")
+                elif retinst == "False":
+                    console.print(" Plugin Not Installed!", style="bold red")
+                else:
+                    console.print(" Error IN checking", style="bold red")
+
+                input("\n\n\n\n\t  Enter for close ")
+                clear_screen()
+
+
+
+            elif sssss == "8":
+                clear_screen()
+                bbbbbbbbnnr()
+                print(" Your Target Cms Is: "+webinfo.get_cms(Target))
+                input("\n\n\n\n\t  Enter for close ")
+                clear_screen()
+
+
+            elif sssss == "9":
+                clear_screen()
+                bbbbbbbbnnr()
+                print(" Your Target Programming_language Is: "+webinfo.get_Programming_language(Target))
+                input("\n\n\n\n\t  Enter for close ")
+                clear_screen()
+
+
+
 
 
 
