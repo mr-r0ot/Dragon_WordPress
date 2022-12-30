@@ -228,7 +228,7 @@ class webinfo():
         
 # / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / / /
 
-    def chek_install_plugin(Target, plugin_name):
+    def check_install_plugin(Target, plugin_name):
         if not "https://" in Target.lower() and not "http://" in Target.lower():
             Target = ("http://"+Target)
         try:
